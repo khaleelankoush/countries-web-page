@@ -8,9 +8,8 @@ document.querySelector('#country-input').addEventListener('keyup', (event) => {
 });
 
 searchBtn.addEventListener('click', () => {
-  let countryName = countryInput.value;
-  let finalURL = `https://b982-2a01-9700-1157-2c00-28e1-f17-f3d8-8251.eu.ngrok.io/api/countries/${countryName}`;
-  console.log(finalURL);
+  let countryName = countryInput.value.trim();
+  let finalURL = `http://localhost:3000/api/countries/${countryName}`;
   fetch(finalURL)
     .then((response) => response.json())
     .then((data) => {
